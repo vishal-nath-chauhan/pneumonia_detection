@@ -20,13 +20,6 @@ app = Flask(__name__)
 MODEL_PATH = 'models/dense_net_pretrained.h5'
 
 model=disease(MODEL_PATH)
-# Load your own trained model
-# model = load_model(MODEL_PATH)
-# model._make_predict_function()          # Necessary
-# print('Model loaded. Start serving...')
-
-
-
 
 
 @app.route('/', methods=['GET'])
@@ -46,30 +39,11 @@ def predict():
 
         # Make prediction
         preds = model.predict('./uploads/image.png')
-        if int(preds)==1:
-            result='Pneumonia detected'
-            return jsonify(result=result, probability=preds)
-        if int(preds)==0:
-            result='No Pneumonia detected'
-            return jsonify(result=result, probability=preds)
-
-
-        # Process your result for human
-        # pred_proba = "{:.3f}".format(np.amax(preds))    # Max probability
-        # pred_class = decode_predictions(preds, top=1)   # ImageNet Decode
-
-        # result = str(pred_class[0][0][1])               # Convert to string
-        # result = result.replace('_', ' ').capitalize()
-        
-        # # Serialize the result, you can add additional fields
-        # return jsonify(result=result, probability=pred_proba)
-
-    # return None
+        return jsonify(result=f"Probability of Pneumonia {preds*100:.3f}%")
 
 
 if __name__ == '__main__':
-    # app.run(port=5002, threaded=False)
 
     # Serve the app with gevent
-    http_server = WSGIServer(('0.0.0.0', 5000), app)
+    http_server = WSGIServer(('0.0.0.0', 8080), app)
     http_server.serve_forever()

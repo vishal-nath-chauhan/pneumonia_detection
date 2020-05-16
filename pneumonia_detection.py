@@ -66,7 +66,7 @@ class disease:
         }
         with self.tf.device('/CPU:0'):
             mo=self.keras.models.load_model(self.model_path,custom_objects=dependencies)
-        img=self.cv2.imread(img_path)
+        img=self.cv2.imread(image_path)
         image_resized = self.cv2.resize(img,(self.image_size,self.image_size))
         imgg=self.cv2.cvtColor(image_resized, self.cv2.COLOR_BGR2RGB)
         dt=self.np.array(imgg)
