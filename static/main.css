@@ -12,6 +12,13 @@ body {
   background: #555;
 }
 
+h1{
+  color:white;
+}
+
+h4{
+  color:white;
+}
 .header h1 {
   position: relative;
   top: 15px;
@@ -27,7 +34,7 @@ body {
   text-decoration: none;
   outline: none;
   color: #ffffff;
-  background-color: rgb(0, 120, 212);
+  background-color: rgb(89, 105, 117);
   padding: 0.5rem 1.2rem;
   border-radius: 2px;
   font-size: 2rem;
@@ -73,14 +80,14 @@ body {
 
 /* Upload box */
 .upload-box {
-  font-size: 0.8rem;
-  color: #666666;
+  font-size: 2.5rem;
+  color: #f9f1f1;
   cursor: pointer;
-  width: 40rem;
+  width: 50rem;
   height: 10rem;
-  background: #fff;
+  background: #3d4b5f;
   border: 0.1rem dashed #838388;
-  border-radius: 0.4rem;
+  border-radius: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,9 +107,9 @@ body {
 }
 
 .upload-box #image-preview {
-  max-width: 14rem;
-  max-height: 8rem;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  max-width: 20rem;
+  max-height: 30rem;
+  box-shadow: 0 4px 4px 0 rgba(4, 10, 1, 0.9), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 #image-result {
