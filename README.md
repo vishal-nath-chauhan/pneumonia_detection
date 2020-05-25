@@ -6,7 +6,7 @@
   <h3>Step to run this </h3>
   <ul>
     <li>Download this repository,move to that folder.</li>
-    <li>Run command <b>pip3 install -r requiments.txt</b></li>
+    <li>Run command <b>pip3 install -r requirements.txt</b></li>
     <li>Run command <b>python3 app.py</b></li></ul>
 </body>
 </html>
